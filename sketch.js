@@ -2,14 +2,15 @@ let yoff = 0.0; // 2nd dimension of Perlin noise
 let echoCount = 5; // Number of echoes
 let echoSpacing = 2; // Spacing between echoes
 let enableEcho = true; // Toggle for echo effect
-let enableGlitch = false; // Toggle for glitch effect
+let enableGlitch = true; // Toggle for glitch effect
 let generating = false; // Flag to indicate if generating image
 
 // Color variables
-let backgroundColors = ['#333333', '#555555', '#777777', '#999999']; // Choose background colors
-let waveColors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00']; // Choose wave colors
-let backgroundColorIndex = 0; // Index to select background color
-let waveColorIndex = 0; // Index to select wave color
+let backgroundColors = ['#333333', '#555555', '#777777', '#999999', '#CC6600', '#990099', '#0099CC', '#CC0033']; // Choose background colors
+let waveColors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF6600', '#9900FF', '#00CCFF', '#FF0066']; // Choose wave colors
+
+let backgroundColorIndex = 5; // Index to select background color
+let waveColorIndex = 3; // Index to select wave color
 let table; // variable to store the CSV data
 let blockNumberInput;
 let canvas;
@@ -42,6 +43,8 @@ function draw() {
 function generateFromInput() {
   let blockNumber = int(blockNumberInput.value());
   let row = table.findRow(String(blockNumber), 'number');
+  if (row) {
+
   background(backgroundColors[backgroundColorIndex]);
 
   stroke(waveColors[waveColorIndex]);
@@ -67,7 +70,7 @@ function generateFromInput() {
     }
   }
   canvas.show();
-}
+}}
 
 function drawWave(phaseOffset, amplitude) {
   beginShape();
@@ -91,16 +94,16 @@ function drawWave(phaseOffset, amplitude) {
 }
 
 function applyGlitch(probability) {
-  if (random(1) < probability) {
-    let x1 = int(random(width));
-    let x2 = int(random(width));
-    let y1 = int(random(height));
-    let y2 = int(random(height));
-    let c = get(x1, y1);
-    set(x1, y1, get(x2, y2));
-    set(x2, y2, c);
-    updatePixels();
+  loadPixels();
+  for (let i = 0; i < pixels.length; i += 4) {
+    if (random(1) < probability) {
+      // Modify the color channels randomly
+      pixels[i] = int(random(255)); // Red
+      pixels[i + 1] = int(random(255)); // Green
+      pixels[i + 2] = int(random(255)); // Blue
+    }
   }
+  updatePixels();
 }
 
 // Add event listener for the "Generate" button
