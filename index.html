@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Noisex Viewer</title>
@@ -56,10 +59,7 @@
     <a href="https://twitter.com/DMT_Noisex" class="twitter-link" target="_blank">
       <img src="https://logos-world.net/wp-content/uploads/2023/08/X-Logo.png" alt="Twitter" class="twitter-icon">
     </a>
-
     <!-- Other content of your website goes here -->
-
-    <div id="generatedImageContainer"></div>
     <div class="intro">
       <h1>Noisex</h1>
       <p>Introducing Noisex, the first animated digital collection inscribed as DMT.</p>
@@ -72,13 +72,20 @@
       <input type="text" id="blockNumberInput" placeholder="Enter block number">
       <button id="generateButton">Generate</button>
     </div>
+
+    <div  id="content">
+      <div id="generatedImageContainer">
+        <!-- The script will generate the image and place it here -->
+    </div>
+    <div id="statsContainer">
+        <!-- Statistics will be inserted here by the updateStats() function -->
+    </div>
+    </div>
     <p>Click the following text to verify the inscription:</p>
     <a href="https://geniidata.com/user/Noisex/noisex-validity-checker">Visit Geniidata</a>
     <p class="footer-text">© 2024 Noisex Viewer. All rights reserved.</p>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.dom.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+  <div>
   <script src="sketch.js"></script>
 </body>
 </html>
