@@ -51,6 +51,8 @@ body {
   text-align: center; /* Center-align text */
   max-width: 600px; /* Limit width to improve readability */
   margin: 0 auto; /* Center the element horizontally */
+  background-color: #55555500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .intro h1 {

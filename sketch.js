@@ -6,6 +6,10 @@ let echoCount = 0; // Number of echoes
 let echoSpacing = 2; // Spacing between echoes
 let enableEcho = false; // Toggle for echo effect
 let enableGlitch = false; // Toggle for glitch effect
+let backgroundc;
+let wavec;
+let have_echos;
+let is_glitch;
 
 let backgroundColors = ['#333333', '#555555', '#777777', '#999999', '#CC6600', '#990099', '#0099CC', '#CC0033']; // Choose background colors
 let waveColors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF6600', '#9900FF', '#00CCFF', '#FF0066']; // Choose wave colors
@@ -104,6 +108,7 @@ function generateFromInput() {
     }
   }
   canvas.show();
+  updateStats();
 }}
 
 function drawWave(phaseOffset, amplitude) {
@@ -140,7 +145,23 @@ function applyGlitch(probability) {
   updatePixels();
 }
 
+
+function updateStats() {
+  // Assuming waterTiles, earthTiles, treeTiles, oreTiles, and goldTiles are already defined
+  let statsHTML = `
+    <p><b>Background color:</b> ${backgroundc}</p>
+    <p><b>Wave color:</b> ${wavec}</p>
+    <p><b>is_glitch:</b> ${is_glitch}</p>
+    <p><b>has_echo:</b> ${have_echos}</p>
+    <p><b>echo_count:</b> ${echoCount}</p>
+  `;
+  // Insert the stats into the 'statsContainer' div
+  document.getElementById('statsContainer').innerHTML = statsHTML;
+}
+
 // Add event listener for the "Generate" button
 document.getElementById("generateButton").addEventListener("click", function() {
   generating = true;
+  // Scroll to the stats container
+  document.getElementById('statsContainer').scrollIntoView({ behavior: 'smooth' });
 });

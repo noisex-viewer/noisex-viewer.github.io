@@ -32,6 +32,9 @@
       margin-bottom: 20px;
     }
 
+    .geniidata {
+      color: black;
+    }
     .twitter-icon {
       width: 50px;
       height: auto;
@@ -51,15 +54,20 @@
     a:hover {
       text-decoration: underline;
     }
+
+    canvas {
+      display: block; /* Ensure canvas is displayed as a block element */
+      margin: auto; /* Center the canvas */
+      margin-bottom: 20px; /* Add some margin below the canvas */
+    }
+
+    .content-below {
+      margin-top: 20px; /* Add margin to separate content below */
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Twitter icon and link -->
-    <a href="https://twitter.com/DMT_Noisex" class="twitter-link" target="_blank">
-      <img src="https://logos-world.net/wp-content/uploads/2023/08/X-Logo.png" alt="Twitter" class="twitter-icon">
-    </a>
-    <!-- Other content of your website goes here -->
     <div class="intro">
       <h1>Noisex</h1>
       <p>Introducing Noisex, the first animated digital collection inscribed as DMT.</p>
@@ -73,19 +81,29 @@
       <button id="generateButton">Generate</button>
     </div>
 
-    <div  id="content">
+    <div id="content">
       <div id="generatedImageContainer">
         <!-- The script will generate the image and place it here -->
-    </div>
-    <div id="statsContainer">
+      </div>
+      <div id="statsContainer">
         <!-- Statistics will be inserted here by the updateStats() function -->
+      </div>
     </div>
+
+    <div class="content-below">
+      <p>Click the following text to verify the inscription:</p>
+      <div class="geniidata">
+        <a href="https://geniidata.com/user/Noisex/noisex-validity-checker">Visit Geniidata</a>
+      </div>
+      <p>
+        <a href="https://twitter.com/DMT_Noisex" class="twitter-link" target="_blank">
+          <img src="https://logos-world.net/wp-content/uploads/2023/08/X-Logo.png" alt="Twitter" class="twitter-icon">
+        </a>
+      </p>
+      <p class="footer-text">© 2024 Noisex Viewer. All rights reserved.</p>
     </div>
-    <p>Click the following text to verify the inscription:</p>
-    <a href="https://geniidata.com/user/Noisex/noisex-validity-checker">Visit Geniidata</a>
-    <p class="footer-text">© 2024 Noisex Viewer. All rights reserved.</p>
   </div>
-  <div>
+
   <script src="sketch.js"></script>
 </body>
 </html>
