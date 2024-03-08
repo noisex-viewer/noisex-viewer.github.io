@@ -10,8 +10,8 @@ let enableGlitch = false; // Toggle for glitch effect
 let backgroundColors = ['#333333', '#555555', '#777777', '#999999', '#CC6600', '#990099', '#0099CC', '#CC0033']; // Choose background colors
 let waveColors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF6600', '#9900FF', '#00CCFF', '#FF0066']; // Choose wave colors
 
-let backgroundColorIndex = 5; // Index to select background color
-let waveColorIndex = 5; // Index to select wave color
+let backgroundColorIndex = 0; // Index to select background color
+let waveColorIndex = 0; // Index to select wave color
 let table; // variable to store the CSV data
 let blockNumberInput;
 let canvas;
@@ -65,14 +65,14 @@ function generateFromInput() {
     else if (nonce>= 3221213104 && nonce <= 3758044192) {backgroundColorIndex=1}
     else if (nonce>= 3758044193 && nonce <= 4294875281) {backgroundColorIndex=0}
     // line color
-    if (fee >= 0 && fee <= 10817082) {waveColors=7}
-    else if (fee> 10817083 && fee <= 21634164) {waveColors=6}
-    else if (fee>= 21634164 && fee <= 32451246) {waveColors=5}
-    else if (fee>= 32451247 && fee <= 43268328) {waveColors=4}
-    else if (fee>= 43268329 && fee <= 54085410) {waveColors=3}
-    else if (fee>= 54085411 && fee <= 64902492) {waveColors=2}
-    else if (fee>= 64902493 && fee <= 75719574) {waveColors=1}
-    else if (fee>= 75719574 && fee <= 86536657) {waveColors=0}
+    if (fee >= 0 && fee <= 10817082) {waveColorIndex=7}
+    else if (fee> 10817083 && fee <= 21634164) {wavewaveColorIndexColors=6}
+    else if (fee>= 21634164 && fee <= 32451246) {waveColorIndex=5}
+    else if (fee>= 32451247 && fee <= 43268328) {waveColorIndex=4}
+    else if (fee>= 43268329 && fee <= 54085410) {waveColorIndex=3}
+    else if (fee>= 54085411 && fee <= 64902492) {waveColorIndex=2}
+    else if (fee>= 64902493 && fee <= 75719574) {waveColorIndex=1}
+    else if (fee>= 75719574 && fee <= 86536657) {waveColorIndex=0}
     // echo
     if (txs >= 0 && txs <= 2000) {enableEcho=true}
     if (txs >= 0 && txs <= 400) {echoCount=6}
