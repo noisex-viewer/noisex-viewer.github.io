@@ -11,6 +11,7 @@ let wavec;
 let have_echos;
 let is_glitch;
 
+
 let backgroundColors = ['#333333', '#555555', '#777777', '#999999', '#CC6600', '#990099', '#0099CC', '#CC0033']; // Choose background colors
 let waveColors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF6600', '#9900FF', '#00CCFF', '#FF0066']; // Choose wave colors
 
@@ -58,7 +59,8 @@ function generateFromInput() {
     let nonce = (row.get('nonce'));
     let txs = parseInt(row.get('total_transactions'));
 
-    if (txs >= 1 && txs <= 100) {enableGlitch = true};
+    if (txs >= 1 && txs <= 100) {enableGlitch = true}
+    else is_glitch=false
     //background, should need to recode this shit, but it works so it's fine
     if (nonce >= 226570 && nonce <= 537057658) {backgroundColorIndex=7}
     else if (nonce> 537057658 && nonce <= 1073888746) {backgroundColorIndex=6}
@@ -87,12 +89,15 @@ function generateFromInput() {
 
 
   background(backgroundColors[backgroundColorIndex]);
+  backgroundc =backgroundColors[backgroundColorIndex];
   stroke(waveColors[waveColorIndex]);
+  wavec=waveColors[waveColorIndex]
   noFill();
 
   let amplitude = 100; // Controls the amplitude of the wave
 
   if (enableGlitch) {
+    is_glitch = true
     applyGlitch(1); // Apply glitch effect with a probability of 10%
   }
 
@@ -101,6 +106,7 @@ function generateFromInput() {
 
   // Draw echoes if enabled
   if (enableEcho) {
+    have_echos = true
     for (let i = 1; i <= echoCount; i++) {
       let echoAmplitude = amplitude * 1 / i; // Decrease amplitude for each echo
       stroke(waveColors[waveColorIndex]);
@@ -158,6 +164,7 @@ function updateStats() {
   // Insert the stats into the 'statsContainer' div
   document.getElementById('statsContainer').innerHTML = statsHTML;
 }
+
 
 // Add event listener for the "Generate" button
 document.getElementById("generateButton").addEventListener("click", function() {
