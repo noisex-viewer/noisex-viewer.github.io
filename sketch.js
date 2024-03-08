@@ -1,8 +1,8 @@
 let yoff = 0.0; // 2nd dimension of Perlin noise
 let echoCount = 5; // Number of echoes
 let echoSpacing = 2; // Spacing between echoes
-let enableEcho = true; // Toggle for echo effect
-let enableGlitch = true; // Toggle for glitch effect
+let enableEcho = false; // Toggle for echo effect
+let enableGlitch = false; // Toggle for glitch effect
 let generating = false; // Flag to indicate if generating image
 
 // Color variables
