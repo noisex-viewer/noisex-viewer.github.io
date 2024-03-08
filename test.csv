@@ -1,0 +1,4 @@
+background_color,wave_color,echo_enabled,echo_count,echo_spacing,glitch_enabled
+#333333,#FF0000,true,5,2,false
+#555555,#00FF00,false,0,0,true
+#777777,#0000FF,true,3,1,true
