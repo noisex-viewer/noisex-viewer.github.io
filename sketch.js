@@ -2,7 +2,7 @@
 let generating = false; // Flag to indicate if generating image
 //attirubutes
 let yoff = 0.0; // 2nd dimension of Perlin noise
-let echoCount = [0,1,2,3,4,5 ]; // Number of echoes
+let echoCount = 0; // Number of echoes
 let echoSpacing = 2; // Spacing between echoes
 let enableEcho = false; // Toggle for echo effect
 let enableGlitch = false; // Toggle for glitch effect
@@ -73,7 +73,13 @@ function generateFromInput() {
     else if (fee>= 54085411 && fee <= 64902492) {waveColors=2}
     else if (fee>= 64902493 && fee <= 75719574) {waveColors=1}
     else if (fee>= 75719574 && fee <= 86536657) {waveColors=0}
-
+    // echo
+    if (txs >= 0 && txs <= 2000) {enableEcho=true}
+    if (txs >= 0 && txs <= 400) {echoCount=6}
+    else if (txs> 400 && txs <= 800) {echoCount=5}
+    else if (txs>= 801 && txs <= 1500) {echoCount=4}
+    else if (txs>= 1501 && txs <= 2000) {echoCount=3}
+  
 
 
   background(backgroundColors[backgroundColorIndex]);
