@@ -1,83 +1,88 @@
-// reference https://tympanus.net/codrops/2018/03/06/creative-audio-visualizers/
+let yoff = 0.0; // 2nd dimension of Perlin noise
+let echoCount = 5; // Number of echoes
+let echoSpacing = 2; // Spacing between echoes
+let enableEcho = true; // Toggle for echo effect
+let enableGlitch = false; // Toggle for glitch effect
+let generating = false; // Flag to indicate if generating image
 
-
-var songs = [ "sawsquarenoise_-_05_-_Rito_Oculto.mp3", "pumkin_spice_edit.mp3", "lobo_loco_edit.mp3"];
-var colorPalette = ["#FAA275", "#19C4D1", "#ED688B", "#973BF9"];
-var sliderRate;
+// Color variables
+let backgroundColors = ['#333333', '#555555', '#777777', '#999999']; // Choose background colors
+let waveColors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00']; // Choose wave colors
+let backgroundColorIndex = 0; // Index to select background color
+let waveColorIndex = 0; // Index to select wave color
 
 function setup() {
-  createCanvas(windowWidth, windowHeight-60);
-	song = loadSound(songs[Math.floor(random(songs.length))]);
-	fft = new p5.FFT();
-  button = createButton("play");
-  button.addClass("playbutton");
-  button.mousePressed(togglePlaying);
-  sliderRate = createSlider(0, 3, 1, 0.1)
-  sliderRate.addClass("slider");
+  createCanvas(710, 400);
 }
 
-
 function draw() {
-  background('#351025');
-  song.rate(sliderRate.value());
-  var pieces = 48;
-  var radius = 200;
-  var spectrum = fft.analyze();
-  var bass = fft.getEnergy("bass");
-  var mid = fft.getEnergy("mid");
-  var treble = fft.getEnergy("treble");
-  var mapMid = map(mid, 0, 255, -radius, radius);
-	var scaleMid = map(mid, 0, 255, -1.5, 1.5);
-	var mapTreble = map(treble, 0, 255, -radius, radius);
-	var scaleTreble = map(treble, 0, 255, 1, 1.5);
-	var mapbass = map(bass, 0, 255, -100, 800);
-	var scalebass = map(bass, 0, 255, 0.5, 2);
-  translate( width/2, height/2 );
-  noFill();
-  stroke( colorPalette[3] );
-  strokeWeight(mapbass);
-  scale(scalebass);
-	rotate(frameCount/mouseX+mouseY*10);
-  ellipse( 0, 0, (radius-100));
-  stroke( colorPalette[1] );
-  ellipse( 0, 0, radius-150 );
-  for( i = 0; i < pieces; i++ ) {
-    strokeWeight(1);
-  stroke(colorPalette[1]);
-  ellipse( 50, radius-50, 50, radius );
-    stroke(colorPalette[0]);
-    strokeWeight(3);
-    point (radius+20, radius+20);
-    strokeWeight(1.5);
-    rotate(mapTreble/10);
-    stroke( colorPalette[3] );
-    line( 0, radius/2, 0, radius*2 );
-    stroke( colorPalette[2] );
-    push;
-    line(mapMid, radius / 2, radius, radius);
-    stroke(colorPalette[0]);
-    pop;
+  if (generating) {
+    generateImage();
   }
 }
 
+function generateImage() {
+  background(backgroundColors[backgroundColorIndex]);
 
-function mousePressed(){
- shuffle(colorPalette, true); 
+  stroke(waveColors[waveColorIndex]);
+  noFill();
+
+  let frequency = 0.1; // Controls the frequency of the wave
+  let amplitude = 100; // Controls the amplitude of the wave
+
+  if (enableGlitch) {
+    applyGlitch(0.1); // Apply glitch effect with a probability of 10%
+  }
+
+  // Draw the main wave
+  drawWave(0, amplitude);
+
+  // Draw echoes if enabled
+  if (enableEcho) {
+    for (let i = 1; i <= echoCount; i++) {
+      let echoAmplitude = amplitude * 0.5 / i; // Decrease amplitude for each echo
+      let echoAlpha = 255 / i; // Decrease opacity for each echo
+      stroke(waveColors[waveColorIndex]);
+      drawWave(i * echoSpacing, echoAmplitude);
+    }
+  }
 }
 
+function drawWave(phaseOffset, amplitude) {
+  beginShape();
 
-function togglePlaying(){
- if (!song.isPlaying()){
-   song.play();
-  button.html("pause");
-} else{ 
-  song.pause();
-  button.html("play")
+  let xoff = 0;
+  for (let x = 0; x <= width; x += 10) {
+    // Calculate a y value according to Perlin noise
+    let y = map(noise(xoff, yoff), 0, 1, -amplitude, amplitude);
+
+    // Set the vertex
+    vertex(x, height / 2 + y); // Center the wave vertically
+
+    // Increment x dimension for Perlin noise
+    xoff += 0.1; // Adjust this value for different frequencies
+  }
+  yoff += 0.01; // Increment y dimension for Perlin noise
+
+  vertex(width, height);
+  vertex(0, height);
+  endShape(CLOSE);
 }
+
+function applyGlitch(probability) {
+  if (random(1) < probability) {
+    let x1 = int(random(width));
+    let x2 = int(random(width));
+    let y1 = int(random(height));
+    let y2 = int(random(height));
+    let c = get(x1, y1);
+    set(x1, y1, get(x2, y2));
+    set(x2, y2, c);
+    updatePixels();
+  }
 }
 
-
-function windowResized() {
-	resizeCanvas(windowWidth, windowHeight-60);
-}
-
+// Add event listener for the "Generate" button
+document.getElementById("generateButton").addEventListener("click", function() {
+  generating = true;
+});

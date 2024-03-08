@@ -1,56 +1,64 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    background-color: #351025;
-  }
-  canvas {
-    display: block;
-  }
-  
-  .playbutton{
-  background-color: transparent;
-  border-color: #ED688B;
-  border-width: 2px;
-  color:#ED688B;
-  width: 100px;
-  height: 40px;
-  font-size: 20px;
-  border-radius: 10px;
-  margin: 10px 50px;
-  font-family: 'Rajdhani', sans-serif;
-  cursor: pointer;
+
+
+
+
+body {
+    font-family: "Sora", sans-serif;
+    background: linear-gradient(to right, #d9c7c7, #736b6b);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px; /* Space for the input box */
   }
   
-  .playbutton:hover{
-  color: white;
-  background-color:#ED688B;
+  .input-area {
+    text-align: center;
+    width: 100%;
+    padding-bottom: 20px;
   }
   
-  .slider{
-    margin: 10px 50px;
-    
+  #blockNumberInput, #generateButton {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
   }
   
-  .slider {
-      -webkit-appearance: none;
-      margin:10px 50px;
-        border-radius: 30px;
-      width: 300px;
-      height: 10px;
-      background: #bc5e77;
-      outline: none;
-      -webkit-transition: .2s;
-      transition: opacity .2s;
+  #generateButton {
+    cursor: pointer;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+  }
+  
+  #generateButton:hover {
+    background-color: #f4511e;
   }
   
   
-  .slider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 17px;
-      height: 17px;
-      border-radius:30px;
-      background: #ED688B;
-      cursor: pointer;
-        
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #statsContainer {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  .intro {
+    font-family: 'Roboto', sans-serif; /* Custom font family for intro */
+    text-align: center; /* Center-align text */
+    max-width: 600px; /* Limit width to improve readability */
+    margin: 0 auto; /* Center the element horizontally */
+  }
+  
+  .intro h1 {
+    font-size: 2.5em; /* Adjust the font size of the heading */
+  }
+  
+  .intro p {
+    margin-bottom: 20px; /* Add some space between paragraphs */
   }
