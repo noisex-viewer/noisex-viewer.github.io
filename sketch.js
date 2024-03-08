@@ -124,21 +124,21 @@ function drawWave(phaseOffset, amplitude) {
   beginShape();
 
   let xoff = 0;
-  for (let x = 0; x <= width; x += 10) {
+  for (let x = -100; x <= width + 100; x += 5) { // Adjusted range to include extra points off the canvas
     // Calculate a y value according to Perlin noise
     let y = map(noise(xoff, yoff), 0, 1, -amplitude, amplitude);
 
-    // Set the vertex
-    vertex(x, height / 2 + y); // Center the wave vertically
+    // Set the vertex if within canvas boundaries
+    if (x >= 0 && x <= width) {
+      vertex(x, height / 2 + y); // Center the wave vertically
+    }
 
     // Increment x dimension for Perlin noise
-    xoff += 0.1; // Adjust this value for different frequencies
+    xoff += 0.05; // Adjust this value for different frequencies
   }
   yoff += 0.01; // Increment y dimension for Perlin noise
 
-  vertex(width, height);
-  vertex(0, height);
-  endShape(CLOSE);
+  endShape();
 }
 
 function applyGlitch(probability) {
