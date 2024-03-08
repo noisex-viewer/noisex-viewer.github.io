@@ -9,6 +9,7 @@ document.getElementById("generateButton").addEventListener("click", function() {
 function preload() {
   // Load CSV file
   data = loadTable('test.csv', 'csv', 'header');
+  console.log(data)
 }
 
 function setup() {
