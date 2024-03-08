@@ -10,7 +10,7 @@ let backgroundColors = ['#333333', '#555555', '#777777', '#999999', '#CC6600', '
 let waveColors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF6600', '#9900FF', '#00CCFF', '#FF0066']; // Choose wave colors
 
 let backgroundColorIndex = 5; // Index to select background color
-let waveColorIndex = 3; // Index to select wave color
+let waveColorIndex = 5; // Index to select wave color
 let table; // variable to store the CSV data
 let blockNumberInput;
 let canvas;
@@ -50,11 +50,10 @@ function generateFromInput() {
   stroke(waveColors[waveColorIndex]);
   noFill();
 
-  let frequency = 0.1; // Controls the frequency of the wave
   let amplitude = 100; // Controls the amplitude of the wave
 
   if (enableGlitch) {
-    applyGlitch(0.1); // Apply glitch effect with a probability of 10%
+    applyGlitch(1); // Apply glitch effect with a probability of 10%
   }
 
   // Draw the main wave
@@ -63,8 +62,7 @@ function generateFromInput() {
   // Draw echoes if enabled
   if (enableEcho) {
     for (let i = 1; i <= echoCount; i++) {
-      let echoAmplitude = amplitude * 0.5 / i; // Decrease amplitude for each echo
-      let echoAlpha = 255 / i; // Decrease opacity for each echo
+      let echoAmplitude = amplitude * 1 / i; // Decrease amplitude for each echo
       stroke(waveColors[waveColorIndex]);
       drawWave(i * echoSpacing, echoAmplitude);
     }
