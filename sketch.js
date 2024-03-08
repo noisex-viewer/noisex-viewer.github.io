@@ -84,7 +84,7 @@ function generateFromInput() {
 
   background(backgroundColors[backgroundColorIndex]);
   stroke(waveColors[waveColorIndex]);
-  //noFill();
+  noFill();
 
   let amplitude = 100; // Controls the amplitude of the wave
 
