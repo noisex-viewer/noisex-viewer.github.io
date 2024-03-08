@@ -1,48 +1,56 @@
-let data; // Declare global variable to hold CSV data
 let yoff = 0.0; // 2nd dimension of Perlin noise
+let echoCount = 5; // Number of echoes
+let echoSpacing = 2; // Spacing between echoes
+let enableEcho = true; // Toggle for echo effect
+let enableGlitch = false; // Toggle for glitch effect
 let generating = false; // Flag to indicate if generating image
 
-// Add event listener for the "Generate" button
-document.getElementById("generateButton").addEventListener("click", function() {
-  generating = true;
-});
+// Color variables
+let backgroundColors = ['#333333', '#555555', '#777777', '#999999']; // Choose background colors
+let waveColors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00']; // Choose wave colors
+let backgroundColorIndex = 0; // Index to select background color
+let waveColorIndex = 0; // Index to select wave color
+let table; // variable to store the CSV data
+let blockNumberInput;
+let canvas;
 
 function preload() {
-  // Load CSV file
-  data = loadTable('test.csv', 'csv', 'header');
+  // Load the CSV file using the raw URL
+  let csvUrl = 'https://raw.githubusercontent.com/noisex-viewer/noisex-viewer.github.io/main/noisex.csv';
+  table = loadTable(csvUrl, 'csv', 'header');
 }
 
 function setup() {
-  createCanvas(710, 400);
+  // Get the input and button from the HTML file
+  blockNumberInput = select('#blockNumberInput');
+  let generateButton = select('#generateButton');
+  generateButton.mousePressed(generateFromInput);
+
+  // Create canvas but hide it initially
+  canvas = createCanvas(710, 400);
+  canvas.hide();
+
 }
 
+// used for looping
 function draw() {
   if (generating) {
-    let rowIndex = Math.floor(random(data.getRowCount())); // Get random row index
-    let row = data.getRow(rowIndex); // Get random row from CSV
-
-    let backgroundColor = row.get('background_color'); // Get background color
-    let waveColor = row.get('wave_color'); // Get wave color
-    let echoEnabled = (row.get('echo_enabled') === 'true'); // Check if echo is enabled
-    let echoCount = parseInt(row.get('echo_count')); // Get echo count
-    let echoSpacing = parseInt(row.get('echo_spacing')); // Get echo spacing
-    let glitchEnabled = (row.get('glitch_enabled') === 'true'); // Check if glitch is enabled
-
-    generateImage(backgroundColor, waveColor, echoEnabled, echoCount, echoSpacing, glitchEnabled);
-    generating = false; // Reset flag
+    generateFromInput();
   }
 }
 
-function generateImage(backgroundColor, waveColor, echoEnabled, echoCount, echoSpacing, glitchEnabled) {
-  background(backgroundColor);
+function generateFromInput() {
+  let blockNumber = int(blockNumberInput.value());
+  let row = table.findRow(String(blockNumber), 'number');
+  background(backgroundColors[backgroundColorIndex]);
 
-  stroke(waveColor);
+  stroke(waveColors[waveColorIndex]);
   noFill();
 
   let frequency = 0.1; // Controls the frequency of the wave
   let amplitude = 100; // Controls the amplitude of the wave
 
-  if (glitchEnabled) {
+  if (enableGlitch) {
     applyGlitch(0.1); // Apply glitch effect with a probability of 10%
   }
 
@@ -50,14 +58,15 @@ function generateImage(backgroundColor, waveColor, echoEnabled, echoCount, echoS
   drawWave(0, amplitude);
 
   // Draw echoes if enabled
-  if (echoEnabled) {
+  if (enableEcho) {
     for (let i = 1; i <= echoCount; i++) {
       let echoAmplitude = amplitude * 0.5 / i; // Decrease amplitude for each echo
       let echoAlpha = 255 / i; // Decrease opacity for each echo
-      stroke(waveColor);
+      stroke(waveColors[waveColorIndex]);
       drawWave(i * echoSpacing, echoAmplitude);
     }
   }
+  canvas.show();
 }
 
 function drawWave(phaseOffset, amplitude) {
@@ -93,3 +102,8 @@ function applyGlitch(probability) {
     updatePixels();
   }
 }
+
+// Add event listener for the "Generate" button
+document.getElementById("generateButton").addEventListener("click", function() {
+  generating = true;
+});
