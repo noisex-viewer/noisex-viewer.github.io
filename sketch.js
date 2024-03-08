@@ -1,11 +1,12 @@
+
+let generating = false; // Flag to indicate if generating image
+//attirubutes
 let yoff = 0.0; // 2nd dimension of Perlin noise
-let echoCount = 5; // Number of echoes
+let echoCount = [0,1,2,3,4,5 ]; // Number of echoes
 let echoSpacing = 2; // Spacing between echoes
 let enableEcho = false; // Toggle for echo effect
 let enableGlitch = false; // Toggle for glitch effect
-let generating = false; // Flag to indicate if generating image
 
-// Color variables
 let backgroundColors = ['#333333', '#555555', '#777777', '#999999', '#CC6600', '#990099', '#0099CC', '#CC0033']; // Choose background colors
 let waveColors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF6600', '#9900FF', '#00CCFF', '#FF0066']; // Choose wave colors
 
@@ -40,10 +41,29 @@ function draw() {
   }
 }
 
+
+
+
 function generateFromInput() {
   let blockNumber = int(blockNumberInput.value());
   let row = table.findRow(String(blockNumber), 'number');
   if (row) {
+
+    let weight = row.get('weight');
+    let fee = row.get('fee_reward_btc');
+    let nonce = (row.get('nonce'));
+    let txs = parseInt(row.get('total_transactions'));
+
+    if (txs >= 1 && txs <= 100) {enableGlitch = true};
+    if (nonce >= 226570 && nonce <= 537057658) {backgroundColorIndex=7}
+    else if (nonce> 537057658 && nonce <= 1073888746) {backgroundColorIndex=6}
+    else if (nonce>= 1073888747 && nonce <= 1610719836) {backgroundColorIndex=5}
+    else if (nonce>= 1610719837 && nonce <= 2147550925) {backgroundColorIndex=4}
+    else if (nonce>= 2147550926 && nonce <= 2684382014) {backgroundColorIndex=3}
+    else if (nonce>= 2684382015 && nonce <= 3221213103) {backgroundColorIndex=2}
+    else if (nonce>= 3221213104 && nonce <= 3758044192) {backgroundColorIndex=1}
+    else if (nonce>= 3758044193 && nonce <= 4294875281) {backgroundColorIndex=0}
+
 
   background(backgroundColors[backgroundColorIndex]);
 

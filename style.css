@@ -1,64 +1,75 @@
-
-
-
-
 body {
-    font-family: "Sora", sans-serif;
-    background: linear-gradient(to right, #d9c7c7, #736b6b);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 50px; /* Space for the input box */
-  }
-  
-  .input-area {
-    text-align: center;
-    width: 100%;
-    padding-bottom: 20px;
-  }
-  
-  #blockNumberInput, #generateButton {
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  #generateButton {
-    cursor: pointer;
-    background-color: #ff5722;
-    color: white;
-    border: none;
-  }
-  
-  #generateButton:hover {
-    background-color: #f4511e;
-  }
-  
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  #statsContainer {
-    background: #fff;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-  }
-  .intro {
-    font-family: 'Roboto', sans-serif; /* Custom font family for intro */
-    text-align: center; /* Center-align text */
-    max-width: 600px; /* Limit width to improve readability */
-    margin: 0 auto; /* Center the element horizontally */
-  }
-  
-  .intro h1 {
-    font-size: 2.5em; /* Adjust the font size of the heading */
-  }
-  
-  .intro p {
-    margin-bottom: 20px; /* Add some space between paragraphs */
-  }
+  font-family: "Sora", sans-serif;
+  background: linear-gradient(to right, #d9c7c7, #736b6b);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px; /* Space for the input box */
+}
+
+.input-area {
+  text-align: center;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+#blockNumberInput, #generateButton {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px; /* Adjust font size */
+}
+
+#generateButton {
+  cursor: pointer;
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+#generateButton:hover {
+  background-color: #f4511e; /* Darker color on hover */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+#statsContainer {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.intro {
+  font-family: 'Roboto', sans-serif; /* Custom font family for intro */
+  text-align: center; /* Center-align text */
+  max-width: 600px; /* Limit width to improve readability */
+  margin: 0 auto; /* Center the element horizontally */
+}
+
+.intro h1 {
+  font-size: 3em; /* Larger font size for the heading */
+  color: #333; /* Darker color for heading */
+}
+
+.intro p {
+  margin-bottom: 20px; /* Add some space between paragraphs */
+  color: #555; /* Slightly darker color for paragraphs */
+}
+
+/* Styling for the link */
+a {
+  color: white; /* Set link color to white */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth transition */
+}
+
+a:hover {
+  color: #ff5722; /* Change color on hover */
+}
