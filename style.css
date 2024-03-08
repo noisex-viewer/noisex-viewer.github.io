@@ -52,12 +52,13 @@ body {
   max-width: 600px; /* Limit width to improve readability */
   margin: 0 auto; /* Center the element horizontally */
   background-color: #55555500;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .intro h1 {
   font-size: 3em; /* Larger font size for the heading */
   color: #333; /* Darker color for heading */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .intro p {
@@ -74,4 +75,10 @@ a {
 
 a:hover {
   color: #ff5722; /* Change color on hover */
+}
+
+#generatedImageContainer {
+  border-radius: 5px; /* Add border-radius to the generated image container */
+  overflow: hidden; /* Ensure that the border-radius is applied to the container */
+  margin-bottom: 30px
 }

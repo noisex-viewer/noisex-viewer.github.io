@@ -12,7 +12,7 @@ let have_echos;
 let is_glitch;
 
 
-let backgroundColors = ['#333333', '#555555', '#777777', '#999999', '#CC6600', '#990099', '#0099CC', '#CC0033']; // Choose background colors
+let backgroundColors = ['#00FFFF','#008080','#FFA500','#ADFF2F','#9370DB','#CC0033','#555555','#edebeb']; // Choose background colors
 let waveColors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF6600', '#9900FF', '#00CCFF', '#FF0066']; // Choose wave colors
 
 let backgroundColorIndex = 0; // Index to select background color
@@ -113,6 +113,9 @@ function generateFromInput() {
       drawWave(i * echoSpacing, echoAmplitude);
     }
   }
+  let containerDiv = document.getElementById('generatedImageContainer');
+  containerDiv.innerHTML = ''; // Clear previous content
+  containerDiv.appendChild(canvas.elt);
   canvas.show();
   updateStats();
 }}
