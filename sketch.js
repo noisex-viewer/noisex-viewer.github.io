@@ -1,3 +1,4 @@
+let data; // Declare global variable to hold CSV data
 let yoff = 0.0; // 2nd dimension of Perlin noise
 let generating = false; // Flag to indicate if generating image
 
@@ -9,7 +10,6 @@ document.getElementById("generateButton").addEventListener("click", function() {
 function preload() {
   // Load CSV file
   data = loadTable('test.csv', 'csv', 'header');
-  console.log(data)
 }
 
 function setup() {
@@ -18,7 +18,8 @@ function setup() {
 
 function draw() {
   if (generating) {
-    let row = data[Math.floor(random(data.getRowCount()))]; // Get random row from CSV
+    let rowIndex = Math.floor(random(data.getRowCount())); // Get random row index
+    let row = data.getRow(rowIndex); // Get random row from CSV
 
     let backgroundColor = row.get('background_color'); // Get background color
     let waveColor = row.get('wave_color'); // Get wave color
