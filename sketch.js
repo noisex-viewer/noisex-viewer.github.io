@@ -1,4 +1,5 @@
 let generating = false; // Flag to indicate if generating image
+let captureFrames = []; // Array to store captured frames
 // Attributes
 let yoff = 0.0; // 2nd dimension of Perlin noise
 let echoCount = 0; // Number of echoes
@@ -101,7 +102,44 @@ function generateFromInput() {
     containerDiv.appendChild(canvas.elt);
     canvas.show();
     updateStats();
+    // Generate multiple frames
+    for (let i = 0; i < 10; i++) { // Capture 10 frames
+     captureFrames.push(get(0, 0, width, height)); // Capture the current canvas state
+      }
+
+      // Reset canvas after generating frames
+      clear();
+      canvas.hide();
+
+      // Save captured frames as GIF
+      saveGif();
+      }
+}
+
+function saveGif() {
+  // Create a new p5 instance
+  let p5Instance = new p5(); // Assuming p5.js library is included
+
+  // Create a new GIF generator
+  let gif = new GIF({
+    workers: 2,
+    quality: 10,
+    width: width,
+    height: height
+    
+  });
+  // Add captured frames to the GIF
+  for (let i = 0; i < captureFrames.length; i++) {
+    gif.addFrame(captureFrames[i].canvas, { delay: 200 }); // Add each frame with a delay of 200 milliseconds
   }
+
+  // Finish the GIF and download it
+  gif.on('finished', function (blob) {
+    p5Instance.save(blob, 'generated_image.gif'); // Save the GIF
+  });
+
+  // Render the GIF
+  gif.render();
 }
 
 function drawWave(phaseOffset, amplitude) {
