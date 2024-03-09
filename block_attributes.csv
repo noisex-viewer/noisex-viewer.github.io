@@ -105,16 +105,16 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 346856,#9370DB,#00CCFF,false,true,4
 346857,#008080,#00CCFF,false,true,4
 346858,#555555,#FF0066,false,true,5
-346859,#FFA500,#9900FF,false,true,
+346859,#FFA500,#9900FF,false,false,0
 346860,#edebeb,#00CCFF,false,true,4
 346861,#CC0033,#9900FF,false,true,3
 346862,#00FFFF,#FF0066,false,true,5
 346863,#CC0033,#00CCFF,false,true,4
 346864,#555555,#00CCFF,false,true,3
 346865,#9370DB,#FF0066,true,true,6
-346866,#555555,#9900FF,false,true,
+346866,#555555,#9900FF,false,false,0
 346867,#ADFF2F,#00CCFF,false,true,4
-346868,#555555,#9900FF,false,true,
+346868,#555555,#9900FF,false,false,0
 346869,#00FFFF,#9900FF,false,true,3
 346870,#555555,#00CCFF,false,true,4
 346871,#CC0033,#00CCFF,false,true,4
@@ -126,7 +126,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 346877,#FFA500,#00CCFF,false,true,4
 346878,#00FFFF,#00CCFF,false,true,4
 346879,#edebeb,#00CCFF,false,true,5
-346880,#ADFF2F,#9900FF,false,true,
+346880,#ADFF2F,#9900FF,false,false,0
 346881,#00FFFF,#9900FF,false,true,3
 346882,#ADFF2F,#9900FF,false,true,3
 346883,#FFA500,#00CCFF,false,true,4
@@ -175,7 +175,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 346926,#555555,#FF0066,false,true,5
 346927,#00FFFF,#00CCFF,false,true,5
 346928,#9370DB,#FF0066,false,true,6
-346929,#ADFF2F,#0000FF,false,true,
+346929,#ADFF2F,#0000FF,false,false,0
 346930,#9370DB,#FF0066,false,true,6
 346931,#edebeb,#00CCFF,false,true,3
 346932,#FFA500,#00CCFF,false,true,5
@@ -267,7 +267,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 347018,#008080,#FF0066,false,true,5
 347019,#008080,#FF0066,false,true,5
 347020,#00FFFF,#FF0066,false,true,6
-347021,#edebeb,#9900FF,false,true,
+347021,#edebeb,#9900FF,false,false,0
 347022,#edebeb,#00CCFF,false,true,3
 347023,#008080,#9900FF,false,true,3
 347024,#00FFFF,#00CCFF,false,true,4
@@ -279,10 +279,10 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 347030,#ADFF2F,#00CCFF,false,true,4
 347031,#CC0033,#00CCFF,false,true,4
 347032,#edebeb,#FF0066,false,true,6
-347033,#9370DB,#9900FF,false,true,
+347033,#9370DB,#9900FF,false,false,0
 347034,#ADFF2F,#FF0066,false,true,5
 347035,#555555,#FF0066,false,true,6
-347036,#00FFFF,#FF6600,false,true,
+347036,#00FFFF,#FF6600,false,false,0
 347037,#FFA500,#00CCFF,false,true,5
 347038,#edebeb,#00CCFF,false,true,4
 347039,#FFA500,#00CCFF,false,true,5
@@ -388,7 +388,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 347139,#ADFF2F,#FF0066,false,true,6
 347140,#edebeb,#00CCFF,false,true,4
 347141,#ADFF2F,#FF0066,false,true,5
-347142,#00FFFF,#9900FF,false,true,
+347142,#00FFFF,#9900FF,false,false,0
 347143,#CC0033,#FF0066,false,true,5
 347144,#CC0033,#FF0066,false,true,6
 347145,#008080,#9900FF,false,true,3
@@ -433,7 +433,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 347184,#FFA500,#00CCFF,false,true,4
 347185,#00FFFF,#00CCFF,false,true,4
 347186,#555555,#FF0066,false,true,4
-347187,#CC0033,#9900FF,false,true,
+347187,#CC0033,#9900FF,false,false,0
 347188,#9370DB,#00CCFF,false,true,5
 347189,#00FFFF,#FF0066,true,true,6
 347190,#ADFF2F,#FF0066,false,true,5
@@ -442,7 +442,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 347193,#00FFFF,#0000FF,false,true,6
 347194,#9370DB,#FF0066,false,true,6
 347195,#008080,#FF0066,true,true,6
-347196,#edebeb,#9900FF,false,true,
+347196,#edebeb,#9900FF,false,false,0
 347197,#008080,#00CCFF,false,true,4
 347198,#00FFFF,#00CCFF,false,true,4
 347199,#9370DB,#00CCFF,false,true,3
@@ -460,7 +460,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 347211,#9370DB,#FF0066,false,true,6
 347212,#CC0033,#FF0066,false,true,6
 347213,#9370DB,#00CCFF,false,true,4
-347214,#008080,#9900FF,false,true,
+347214,#008080,#9900FF,false,false,0
 347215,#00FFFF,#00CCFF,false,true,4
 347216,#00FFFF,#FF0066,false,true,6
 347217,#008080,#FF0066,false,true,4
@@ -533,7 +533,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 347284,#9370DB,#FF0066,false,true,6
 347285,#CC0033,#FF0066,false,true,6
 347286,#008080,#00CCFF,false,true,4
-347287,#ADFF2F,#9900FF,false,true,
+347287,#ADFF2F,#9900FF,false,false,0
 347288,#008080,#00CCFF,false,true,4
 347289,#FFA500,#FF0066,false,true,5
 347290,#008080,#FF0066,true,true,6
@@ -560,7 +560,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 347311,#555555,#9900FF,false,true,3
 347312,#FFA500,#00CCFF,false,true,5
 347313,#00FFFF,#FF0066,false,true,5
-347314,#FFA500,#9900FF,false,true,
+347314,#FFA500,#9900FF,false,false,0
 347315,#ADFF2F,#00CCFF,false,true,4
 347316,#ADFF2F,#00CCFF,false,true,4
 347317,#00FFFF,#00CCFF,false,true,4
@@ -581,7 +581,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 347332,#CC0033,#00CCFF,false,true,4
 347333,#CC0033,#00CCFF,false,true,4
 347334,#9370DB,#FF0066,false,true,5
-347335,#008080,#FF6600,false,true,
+347335,#008080,#FF6600,false,false,0
 347336,#9370DB,#00CCFF,false,true,4
 347337,#edebeb,#FF0066,false,true,6
 347338,#edebeb,#FF0066,false,true,6
@@ -663,7 +663,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 347414,#9370DB,#FF0066,true,true,6
 347415,#edebeb,#FF0066,false,true,5
 347416,#00FFFF,#FF0066,false,true,6
-347417,#CC0033,#9900FF,false,true,
+347417,#CC0033,#9900FF,false,false,0
 347418,#00FFFF,#00CCFF,false,true,5
 347419,#008080,#9900FF,false,true,3
 347420,#9370DB,#00CCFF,false,true,4
@@ -834,7 +834,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 347585,#FFA500,#9900FF,false,true,3
 347586,#edebeb,#FF0066,false,true,5
 347587,#ADFF2F,#9900FF,false,true,3
-347588,#9370DB,#9900FF,false,true,
+347588,#9370DB,#9900FF,false,false,0
 347589,#edebeb,#00CCFF,false,true,4
 347590,#008080,#00CCFF,false,true,5
 347591,#CC0033,#9900FF,false,true,3
@@ -964,7 +964,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 347715,#9370DB,#00CCFF,false,true,4
 347716,#555555,#FF0066,false,true,6
 347717,#ADFF2F,#FF0066,false,true,6
-347718,#00FFFF,#9900FF,false,true,
+347718,#00FFFF,#9900FF,false,false,0
 347719,#ADFF2F,#FF0066,true,true,6
 347720,#555555,#FF0066,true,true,6
 347721,#ADFF2F,#FF0066,false,true,5
@@ -1015,7 +1015,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 347766,#FFA500,#00CCFF,false,true,4
 347767,#FFA500,#FF0066,false,true,6
 347768,#9370DB,#FF0066,false,true,5
-347769,#00FFFF,#FF6600,false,true,
+347769,#00FFFF,#FF6600,false,false,0
 347770,#555555,#00CCFF,false,true,4
 347771,#edebeb,#00CCFF,false,true,4
 347772,#ADFF2F,#FF0066,false,true,5
@@ -1104,7 +1104,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 347855,#edebeb,#00CCFF,false,true,4
 347856,#ADFF2F,#00CCFF,false,true,4
 347857,#008080,#00CCFF,false,true,3
-347858,#FFA500,#9900FF,false,true,
+347858,#FFA500,#9900FF,false,false,0
 347859,#9370DB,#FF0066,false,true,6
 347860,#edebeb,#FF0066,false,true,6
 347861,#555555,#FF0066,false,true,6
@@ -1114,14 +1114,14 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 347865,#CC0033,#00CCFF,false,true,5
 347866,#FFA500,#FF0066,false,true,5
 347867,#ADFF2F,#9900FF,false,true,4
-347868,#008080,#9900FF,false,true,
+347868,#008080,#9900FF,false,false,0
 347869,#CC0033,#FF0066,false,true,5
 347870,#008080,#00CCFF,false,true,4
-347871,#00FFFF,#9900FF,false,true,
+347871,#00FFFF,#9900FF,false,false,0
 347872,#9370DB,#00CCFF,false,true,4
 347873,#edebeb,#00CCFF,false,true,4
 347874,#edebeb,#FF0066,false,true,5
-347875,#9370DB,#9900FF,false,true,
+347875,#9370DB,#9900FF,false,false,0
 347876,#555555,#00CCFF,false,true,4
 347877,#CC0033,#9900FF,false,true,3
 347878,#edebeb,#9900FF,false,true,3
@@ -1129,7 +1129,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 347880,#CC0033,#00CCFF,false,true,4
 347881,#ADFF2F,#9900FF,false,true,4
 347882,#CC0033,#00CCFF,false,true,4
-347883,#555555,#FF6600,false,true,
+347883,#555555,#FF6600,false,false,0
 347884,#9370DB,#9900FF,false,true,3
 347885,#ADFF2F,#FF0066,false,true,5
 347886,#FFA500,#00CCFF,false,true,4
@@ -1143,7 +1143,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 347894,#CC0033,#FF0066,false,true,5
 347895,#CC0033,#FF0066,false,true,5
 347896,#edebeb,#FF0066,false,true,6
-347897,#CC0033,#9900FF,false,true,
+347897,#CC0033,#9900FF,false,false,0
 347898,#9370DB,#FF0066,false,true,6
 347899,#ADFF2F,#FF0066,false,true,5
 347900,#CC0033,#00CCFF,false,true,4
@@ -1267,10 +1267,10 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 348018,#555555,#FF0066,false,true,5
 348019,#CC0033,#FF0066,false,true,5
 348020,#CC0033,#00CCFF,false,true,4
-348021,#9370DB,#9900FF,false,true,
+348021,#9370DB,#9900FF,false,false,0
 348022,#008080,#9900FF,false,true,4
 348023,#CC0033,#00CCFF,false,true,4
-348024,#9370DB,#9900FF,false,true,
+348024,#9370DB,#9900FF,false,false,0
 348025,#00FFFF,#00CCFF,false,true,4
 348026,#00FFFF,#9900FF,false,true,3
 348027,#FFA500,#00CCFF,false,true,4
@@ -1280,7 +1280,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 348031,#CC0033,#FF0066,false,true,5
 348032,#9370DB,#FF0066,false,true,6
 348033,#FFA500,#FF0066,false,true,6
-348034,#CC0033,#9900FF,false,true,
+348034,#CC0033,#9900FF,false,false,0
 348035,#edebeb,#00CCFF,false,true,4
 348036,#FFA500,#00CCFF,false,true,4
 348037,#555555,#00CCFF,false,true,4
@@ -1291,10 +1291,10 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 348042,#555555,#00CCFF,false,true,4
 348043,#edebeb,#FF0066,false,true,5
 348044,#edebeb,#FF0066,true,true,6
-348045,#00FFFF,#9900FF,false,true,
+348045,#00FFFF,#9900FF,false,false,0
 348046,#ADFF2F,#00CCFF,false,true,4
 348047,#ADFF2F,#00CCFF,false,true,4
-348048,#008080,#9900FF,false,true,
+348048,#008080,#9900FF,false,false,0
 348049,#edebeb,#9900FF,false,true,3
 348050,#ADFF2F,#9900FF,false,true,3
 348051,#CC0033,#00CCFF,false,true,4
@@ -1378,7 +1378,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 348129,#ADFF2F,#FF0066,false,true,6
 348130,#008080,#FF0066,false,true,6
 348131,#ADFF2F,#9900FF,false,true,3
-348132,#9370DB,#FF6600,false,true,
+348132,#9370DB,#FF6600,false,false,0
 348133,#9370DB,#00CCFF,false,true,4
 348134,#FFA500,#9900FF,false,true,3
 348135,#ADFF2F,#00CCFF,false,true,4
@@ -1422,12 +1422,12 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 348173,#00FFFF,#00CCFF,false,true,5
 348174,#00FFFF,#00CCFF,false,true,4
 348175,#9370DB,#FF0066,true,true,6
-348176,#555555,#FF6600,false,true,
+348176,#555555,#FF6600,false,false,0
 348177,#008080,#FF0066,false,true,6
 348178,#edebeb,#FF0066,false,true,6
 348179,#FFA500,#FF0066,false,true,6
 348180,#ADFF2F,#00CCFF,false,true,4
-348181,#008080,#9900FF,false,true,
+348181,#008080,#9900FF,false,false,0
 348182,#9370DB,#FF0066,false,true,5
 348183,#CC0033,#00CCFF,false,true,4
 348184,#CC0033,#00CCFF,false,true,5
@@ -1446,7 +1446,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 348197,#edebeb,#FF0066,false,true,5
 348198,#555555,#00CCFF,false,true,4
 348199,#CC0033,#FF0066,false,true,5
-348200,#555555,#9900FF,false,true,
+348200,#555555,#9900FF,false,false,0
 348201,#FFA500,#FF0066,false,true,5
 348202,#008080,#FF0066,false,true,6
 348203,#00FFFF,#FF0066,false,true,6
@@ -1549,7 +1549,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 348300,#00FFFF,#FF0066,false,true,6
 348301,#FFA500,#00CCFF,false,true,4
 348302,#555555,#00CCFF,false,true,4
-348303,#edebeb,#FFFF00,false,true,
+348303,#edebeb,#FFFF00,false,false,0
 348304,#FFA500,#00CCFF,false,true,5
 348305,#ADFF2F,#00CCFF,false,true,6
 348306,#ADFF2F,#00CCFF,false,true,4
@@ -1574,7 +1574,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 348325,#FFA500,#00CCFF,false,true,5
 348326,#008080,#00CCFF,false,true,4
 348327,#FFA500,#FF0066,false,true,5
-348328,#555555,#FFFF00,false,true,
+348328,#555555,#FFFF00,false,false,0
 348329,#FFA500,#00CCFF,false,true,4
 348330,#555555,#00CCFF,false,true,4
 348331,#00FFFF,#00CCFF,false,true,4
@@ -1606,7 +1606,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 348357,#FFA500,#00CCFF,false,true,4
 348358,#008080,#00CCFF,false,true,4
 348359,#008080,#FF0066,false,true,5
-348360,#00FFFF,#9900FF,false,true,
+348360,#00FFFF,#9900FF,false,false,0
 348361,#edebeb,#00CCFF,false,true,5
 348362,#9370DB,#FF0066,false,true,6
 348363,#ADFF2F,#FF0066,false,true,5
@@ -1673,11 +1673,11 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 348424,#00FFFF,#00CCFF,false,true,4
 348425,#008080,#FF0066,false,true,5
 348426,#555555,#00CCFF,false,true,5
-348427,#9370DB,#9900FF,false,true,
+348427,#9370DB,#9900FF,false,false,0
 348428,#CC0033,#FF0066,false,true,5
 348429,#FFA500,#FF0066,false,true,5
 348430,#CC0033,#00CCFF,false,true,4
-348431,#00FFFF,#9900FF,false,true,
+348431,#00FFFF,#9900FF,false,false,0
 348432,#008080,#FF0000,false,true,3
 348433,#FFA500,#FF0000,false,true,4
 348434,#008080,#FF0066,false,true,5
@@ -1715,7 +1715,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 348466,#CC0033,#9900FF,false,true,4
 348467,#00FFFF,#00CCFF,false,true,4
 348468,#008080,#00CCFF,false,true,4
-348469,#CC0033,#9900FF,false,true,
+348469,#CC0033,#9900FF,false,false,0
 348470,#555555,#9900FF,false,true,3
 348471,#edebeb,#FF0066,true,true,6
 348472,#008080,#00CCFF,false,true,4
@@ -1739,7 +1739,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 348490,#ADFF2F,#FF0066,false,true,6
 348491,#555555,#FF0066,false,true,6
 348492,#9370DB,#FF0066,true,true,6
-348493,#CC0033,#9900FF,false,true,
+348493,#CC0033,#9900FF,false,false,0
 348494,#008080,#FF0066,false,true,5
 348495,#9370DB,#FF0066,false,true,5
 348496,#008080,#FF0066,false,true,6
@@ -1818,7 +1818,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 348569,#CC0033,#FF0066,false,true,5
 348570,#008080,#00CCFF,false,true,5
 348571,#CC0033,#FF0066,false,true,6
-348572,#008080,#FF6600,false,true,
+348572,#008080,#FF6600,false,false,0
 348573,#FFA500,#00CCFF,false,true,4
 348574,#FFA500,#FF0066,false,true,5
 348575,#edebeb,#FF0066,false,true,6
@@ -1851,7 +1851,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 348602,#FFA500,#FF0066,false,true,5
 348603,#CC0033,#9900FF,false,true,3
 348604,#00FFFF,#00CCFF,false,true,4
-348605,#00FFFF,#9900FF,false,true,
+348605,#00FFFF,#9900FF,false,false,0
 348606,#555555,#00CCFF,false,true,4
 348607,#ADFF2F,#FF0066,false,true,5
 348608,#00FFFF,#FF0066,false,true,5
@@ -1874,7 +1874,7 @@ block_number,background_color_index,wave_color_index,is_glitch,has_echo,echo_cou
 348625,#008080,#FF0066,false,true,6
 348626,#CC0033,#FF0066,true,true,6
 348627,#edebeb,#00CCFF,false,true,4
-348628,#ADFF2F,#9900FF,false,true,
+348628,#ADFF2F,#9900FF,false,false,0
 348629,#FFA500,#FF0066,false,true,6
 348630,#FFA500,#9900FF,false,true,3
 348631,#ADFF2F,#FF0066,false,true,4

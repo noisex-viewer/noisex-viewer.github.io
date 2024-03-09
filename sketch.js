@@ -66,6 +66,7 @@ function generateFromInput() {
     if (enableEcho) {
       echoCount = calculateEchoCount(txs);
     }
+    else {have_echos=false}
 
     background(backgroundColors[backgroundColorIndex]);
     backgroundc = backgroundColors[backgroundColorIndex];
@@ -80,6 +81,7 @@ function generateFromInput() {
       is_glitch = true;
       applyGlitch(0.2, 3);; // Apply glitch effect with a probability of 10%
     }
+    else { is_glitch=false}
 
     // Draw the main wave
     drawWave(0, amplitude);
