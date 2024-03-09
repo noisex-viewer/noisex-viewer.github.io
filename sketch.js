@@ -221,11 +221,3 @@ document.getElementById("generateButton").addEventListener("click", function () 
   // Scroll to the stats container
   document.getElementById('statsContainer').scrollIntoView({ behavior: 'smooth' });
 });
-
-// Add event listener for the "Save Image" button
-document.getElementById("saveButton").addEventListener("click", saveImage);
-
-function saveImage() {
-  // Save canvas as PNG file
-  saveCanvas(canvas, 'generated_image', 'png');
-}
