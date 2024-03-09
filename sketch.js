@@ -206,9 +206,12 @@ function calculateEchoCount(txs) {
   } else if (txs >= 801 && txs <= 1500) {
     return 4;
   } else if (txs >= 1501 && txs <= 2000) {
-    return 3;
+    return 3;}
+    else {
+      have_echos = false
+    return 0;}
   }
-}
+
 
 // Add event listener for the "Generate" button
 document.getElementById("generateButton").addEventListener("click", function () {
