@@ -242,7 +242,6 @@ function applyGlitch(probability, blockSize) {
   updatePixels();
 }
 
-
 function updateStats() {
   let statsHTML = `
     <p><b>Background color:</b> ${backgroundc}</p>
@@ -293,6 +292,7 @@ function calculateWaveColorIndex(fee) {
     return 0;
   }
 }
+
 
 function calculateEchoCount(txs) {
   if (txs >= 0 && txs <= 400) {
