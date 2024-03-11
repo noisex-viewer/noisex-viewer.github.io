@@ -9,6 +9,8 @@ let backgroundc;
 let wavec;
 let have_echos;
 let is_glitch;
+let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+let oscillator;
 
 let backgroundColors = ['#00FFFF', '#008080', '#FFA500', '#ADFF2F', '#9370DB', '#CC0033', '#555555', '#edebeb']; // Choose background colors
 let waveColors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF6600', '#9900FF', '#00CCFF', '#FF0066']; // Choose wave colors
@@ -44,6 +46,7 @@ function draw() {
 }
 
 function generateFromInput() {
+
   let blockNumber = int(blockNumberInput.value());
   let row = table.findRow(String(blockNumber), 'number');
   if (row) {
@@ -73,7 +76,7 @@ function generateFromInput() {
     stroke(waveColors[waveColorIndex]);
     wavec = waveColors[waveColorIndex];
     noFill();
-
+    
     let amplitude = 100; // Controls the amplitude of the wave
 
     // Apply glitch effect
@@ -101,7 +104,98 @@ function generateFromInput() {
     containerDiv.appendChild(canvas.elt);
     canvas.show();
     updateStats();
+      let notes = ['C4', 'D4', 'E4', 'F4', 'G4', 'A4', 'B4', 'C5']; // Musical notes corresponding to wave colors
+  // Start the melody
+  playMelody(notes[waveColorIndex], amplitude);
+if (is_glitch) {
+    applyDistortion();
+  }}
+    
+}
+
+function playMelody(note, amplitude, echoCount, isGlitch, ) {
+  // Convert the note to frequency using a musical scale
+  const frequencies = {
+    'C4': 261.63,
+    'D4': 293.66,
+    'E4': 329.63,
+    'F4': 349.23,
+    'G4': 392.00,
+    'A4': 440.00,
+    'B4': 493.88,
+    'C5': 523.25
+  };
+  const frequency = frequencies[note]/2;
+
+  // Create an oscillator
+  const oscillator = audioCtx.createOscillator();
+  oscillator.type = 'sine'; // Sine wave for smoother sound
+  oscillator.frequency.setValueAtTime(frequency, audioCtx.currentTime); // Set frequency
+  oscillator.start();
+
+  // Create a gain node to adjust volume
+  const gainNode = audioCtx.createGain();
+  const defaultVolume = 0.5; // Default volume
+  gainNode.gain.setValueAtTime(defaultVolume, audioCtx.currentTime); // Set default volume
+
+  // Apply amplitude modulation to create a pulsating effect
+  const modulationDepth = 0.3; // Adjust depth of modulation
+  const modulationRate = 0.2; // Adjust rate of modulation
+  gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+  gainNode.gain.linearRampToValueAtTime(modulationDepth, audioCtx.currentTime + modulationRate);
+  gainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + modulationRate * 2);
+
+  // Adjust volume based on echo count
+  let echoVolume = 0.1 + (echoCount * 0.1); // Increase volume with more echoes
+  if (!isNaN(echoVolume) && isFinite(echoVolume)) { // Check if echoVolume is valid
+    gainNode.gain.value *= echoVolume;
   }
+
+  // Adjust volume based on glitch effect
+  if (isGlitch) {
+    gainNode.gain.value *= 0.8; // Reduce volume when glitch is active
+  }
+
+  // Connect oscillator to gain node and then to the audio output
+  oscillator.connect(gainNode);
+  gainNode.connect(audioCtx.destination);
+  
+  // Schedule stopping the oscillator after a certain duration
+  setTimeout(() => {
+    oscillator.stop();
+  }, 8000); // Adjust duration as needed
+}
+
+// Function to create a simple reverb buffer
+function createReverbBuffer() {
+  let length = audioCtx.sampleRate * 3000;
+  let buffer = audioCtx.createBuffer(2, length, audioCtx.sampleRate);
+  for (let channel = 0; channel < buffer.numberOfChannels; channel++) {
+    let data = buffer.getChannelData(channel);
+    for (let i = 0; i < length; i++) {
+      data[i] = Math.random() * 2 - 1;
+    }
+  }
+  return buffer;
+}
+// Function to apply distortion
+function applyDistortion() {
+  // Create a waveshaper node
+  let waveshaper = audioCtx.createWaveShaper();
+
+  // Define a curve for distortion
+  let curve = new Float32Array(65536);
+  let deg = Math.PI / 180;
+  for (let i = 0; i < 65536; ++i ) {
+    let x = i * 2 / 65536 - 1;
+    curve[i] = Math.tanh(x * 1500); // Adjust the factor to control the distortion intensity
+  }
+
+  // Set the curve for the waveshaper
+  waveshaper.curve = curve;
+
+  // Connect the waveshaper to the audio output
+  waveshaper.connect(audioCtx.destination);
 }
 
 function drawWave(phaseOffset, amplitude) {
